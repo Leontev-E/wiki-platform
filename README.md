@@ -1,6 +1,11 @@
 # Wiki Platform
 
+[Русская версия ниже](#русская-версия--russian-version)
+
 An internal knowledge base and performance dashboard built for affiliate marketing teams. The platform pairs a React front end with an Express/MySQL API, includes article management, approvals monitoring, and utilities for integrating with trackers such as Keitaro and infrastructure providers like Cloudflare.
+
+**Developed by:** [BoostClicks — Evgenii Leontev](https://t.me/boostclicks)  
+**Website:** [https://boostclicks.ru/](https://boostclicks.ru/)
 
 ---
 
@@ -48,12 +53,14 @@ wiki-platform/
 ## Getting Started
 
 1. **Clone**
+
    ```bash
    git clone https://github.com/<your-org>/wiki-platform.git
    cd wiki-platform
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Back end
    cd server
@@ -65,10 +72,12 @@ wiki-platform/
    ```
 
 3. **Configure environment variables**
+
    - Copy `server/.env.example` to `server/.env` and update each value.
    - Copy `client/.env.example` to `client/.env` and set the URLs for your deployment.
 
 4. **Create the database schema**
+
    - Provision a MySQL database.
    - Create tables (articles, categories, comments, services, approvals, clicks, users, etc.) to match the queries in `server/routes`.
    - Seed initial data if necessary.
@@ -84,20 +93,20 @@ wiki-platform/
 
 ### Server (`server/.env`)
 
-| Variable | Description |
-| --- | --- |
-| `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | MySQL connection info. |
-| `DB_CONNECTION_LIMIT`, `DB_CHARSET` | Optional connection pool tuning. |
-| `CLIENT_URL` | Origin URL of the React app (for CORS). |
-| `PORT` | Server listening port (default `10000`). |
-| `REDIS_URL` | Redis connection string (`redis://host:port`). |
+| Variable                                                  | Description                                    |
+| --------------------------------------------------------- | ---------------------------------------------- |
+| `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | MySQL connection info.                         |
+| `DB_CONNECTION_LIMIT`, `DB_CHARSET`                       | Optional connection pool tuning.               |
+| `CLIENT_URL`                                              | Origin URL of the React app (for CORS).        |
+| `PORT`                                                    | Server listening port (default `10000`).       |
+| `REDIS_URL`                                               | Redis connection string (`redis://host:port`). |
 
 ### Client (`client/.env`)
 
-| Variable | Description |
-| --- | --- |
-| `VITE_API_URL` | Base URL for the Express API (`https://your-api-domain.com/api`). |
-| `VITE_KEITARO_API_URL` | Base URL for the tracker API used by the domain binding page. |
+| Variable               | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- |
+| `VITE_API_URL`         | Base URL for the Express API (`https://your-api-domain.com/api`). |
+| `VITE_KEITARO_API_URL` | Base URL for the tracker API used by the domain binding page.     |
 
 ---
 
@@ -124,22 +133,27 @@ npm run dev
 ## Production Deployment
 
 1. **Prepare environment**
+
    - Set your `.env` files with production credentials.
    - Provision managed MySQL & Redis services if needed.
 
 2. **Build the client**
+
    ```bash
    cd client
    npm run build
    ```
+
    Deploy the generated `client/dist` directory to your CDN or static host (e.g., Cloudflare Pages, Netlify, S3 + CloudFront, Nginx).
 
 3. **Deploy the API**
+
    - Copy the `server/` directory (excluding `node_modules`) to your server or container.
    - Install dependencies and run `npm run start` with a process manager (PM2, systemd, Docker).
    - Configure reverse proxy (Nginx/Traefik) to expose `PORT` over HTTPS.
 
 4. **Set up background jobs**
+
    - Scheduled jobs (click cleanup & monthly approvals purge) rely on `node-schedule`. They run within the API process; no external cron setup is required as long as the process stays up.
 
 5. **Domain binding helper**
@@ -204,3 +218,9 @@ This project currently has no explicit license. Add a `LICENSE` file (e.g., MIT,
 ## Support & Questions
 
 Open an issue in the GitHub repository with detailed reproduction steps, environment info, and logs. For security-sensitive topics, contact the maintainers privately.
+
+---
+
+## Русская версия / Russian version
+
+Перевод и инструкции на русском языке расположены в отдельном файле [README.ru.md](README.ru.md).
