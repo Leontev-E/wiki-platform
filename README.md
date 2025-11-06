@@ -4,7 +4,7 @@
 
 An internal knowledge base and performance dashboard built for affiliate marketing teams. The platform pairs a React front end with an Express/MySQL API, includes article management, approvals monitoring, and utilities for integrating with trackers such as Keitaro and infrastructure providers like Cloudflare.
 
-**Developed by:** [BoostClicks — Evgenii Leontev](https://t.me/boostclicks)  
+**Developed by:** [BoostClicks - Evgenii Leontev](https://t.me/boostclicks)  
 **Website:** [https://boostclicks.ru/](https://boostclicks.ru/)
 
 ---
