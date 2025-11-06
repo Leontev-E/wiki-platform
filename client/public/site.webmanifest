@@ -1,0 +1,14 @@
+{
+    "name": "KLM Wiki",
+    "short_name": "KLM",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#2563EB",
+    "background_color": "#FFFFFF",
+    "display": "standalone"
+}

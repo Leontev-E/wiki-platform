@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Если запрашивают именно index.html — отдать его
+  RewriteRule ^index\.html$ - [L]
+
+  # Если файл или каталог реально существуют — отдать как есть
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Во всех остальных случаях — вернуть index.html
+  RewriteRule . /index.html [L]
+</IfModule>

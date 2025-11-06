@@ -1,0 +1,90 @@
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #3182ce;
+    /* Спокойный синий */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-button:hover:not(:disabled) {
+    background-color: #2b6cb0;
+    /* Темнее синий */
+    transform: translateY(-1px);
+}
+
+.login-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.login-button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+input {
+    padding-right: 40px;
+    /* Место для иконки "глазика" */
+}
+
+/* Стили для заголовка */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.1), rgba(43, 108, 176, 0.1));
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 70%);
+    opacity: 0.4;
+}
+
+.logo-title {
+    font-size: 2rem;
+    /* text-2xl для мягкости */
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, #3182ce, #63b3ed);
+    /* От спокойного синего к светлому */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    animation: slide-up 0.6s ease-out;
+    letter-spacing: 0.02em;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
